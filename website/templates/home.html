@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<title>Forside</title>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="https://www.jqueryscript.net/demo/Excel-like-Bootstrap-Table-Sorting-Filtering-Plugin/excel-bootstrap-table-filter-style.css">
+<script src="/static/excel-bootstrap-table-filter-bundle.js"></script>
+</head>
+<body>
+
+{% if user.is_authenticated %}
+
+<br/> 
+<div class="card-header"style="margin-left: -200px;"><h1>Portfølje<h1></div>
+
+<br/>
+<body>
+<table style="width: 100rem";>
+<table id = "table" table class="table table-striped table-hover table-bordered" style="width: 120em;margin-left: -220px";>
+  <thead class="table" style="background-color: #102B25;">
+        <thead>
+          <tr class="table-info">
+            <th>BFE Nummer</th>
+            <th>Adresse</th>
+            <th>Kommune</th>
+            <th>Region</th>
+            <th>Kontaktperson</th>
+            <th>Mail</th>
+            <th>Telefonnummer</th>
+            <th>m2</th>
+            <th>Kommuneplan</th>
+            <th>Lokalplan</th>
+            <th>Formål</th>
+            <th>Lead</th>
+            <th>Sendt til DLA</th>
+            <th>id</th>
+          </tr>
+        </thead>
+        <tbody>
+      {% if records %}
+  {% for record in records %}
+          <tr>
+            <td>{{ record.BFE_Nummer }}</td>
+            <td>{{ record.Adresse }}</td>
+            <td>{{ record.Kommune }}</td>
+            <td>{{ record.Region }}</td>
+            <td>{{ record.Kontaktperson }}</td>
+            <td>{{ record.Mail }}</td>
+            <td>{{ record.Telefonnummer }}</td>
+            <td>{{ record.m2 }}</td>
+            <td>{{ record.Kommuneplan }}</td>
+            <td>{{ record.Lokalplan }}</td>
+            <td>{{ record.Formål }}</td>
+            <td>{{ record.Lead }}</td>
+            <td>{{ record.Sendt_til_DLA }}</td>
+            <td><a href="{% url 'Record' record.id %}">{{ record.id }}</td>
+          </tr>
+          {% endfor %}
+          {% endif%}
+        </tbody>
+      </table>
+      </table>
+
+</tbody>
+	</table>
+	</table>
+    <script>     
+        
+        $(function () {
+              $('#table').excelTableFilter();
+        });
+        
+    </script>
+    <style>
+    .table-info th {
+        background-color: #102B25;
+        color: white;
+    }
+    .dropdown-filter-content {
+    display: none;
+    position: absolute;
+    background-color: grey;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-bottom:5px;
+    padding-top:5px;
+    padding-right:5px;
+    padding-left:5px;
+  }
+  .arrow-down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-right:5px;
+    margin-left:5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+</style>
+</body>
+</html>
+
+<button type="button" class="btn btn-primary" style="margin-left:-100px" onclick="location.href='{% url 'importrecorddata' %}'">Importer data</button>
+
+{% else %}
+
+<br/> 
+<h1>Login</h1>
+
+<br/> 
+<form method="POST" action = "{%url 'home' %}">
+	{% csrf_token %}
+<form>
+  <div class="mb-3">
+    <input type="text" class="form-control" name= "username", placeholder ="Brugernavn" required>
+  </div>
+  <div class="mb-3">
+    <input type="password" class="form-control" name= "password", placeholder="Password" required>
+  </div>
+  <button type="submit" class="btn btn-secondary">Log ind</button>
+</form>
+
+{% endif%}
+
+{% endblock %}

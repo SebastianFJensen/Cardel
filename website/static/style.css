@@ -1,0 +1,53 @@
+
+
+
+* { margin: 0; padding: 0; outline: none; box-sizing: border-box; vertical-align: top;}
+.folder-tree-wrapper { background-color: #fff; width: 300px; min-height: 260px; padding: 20px; margin: 35px auto; border-radius: 2%; box-shadow: 1px 1px 1px 0 rgba(0,0,0,.11); }
+.folder-tree { list-style: none; cursor: pointer; padding-left: 20px; }
+.folder-tree li { margin-bottom: 10px; font-size: 16px; transition: all .4s ease; position: relative; }
+.folder-tree li:hover {  }
+.folder-tree li i { color: rgb(242, 176, 53); }
+.folder-tree li ul { padding-left: 10px; padding-top: 8px; }
+.folder-tree ul { display: none; position: relative; }
+.folder-tree ul:before { position: absolute; content: ''; left: -10px; top: 0; width: 2px; height: 100%; background-color: transparent; border-left: dashed 1px #c2c2c2; border-bottom: dashed 1px #c2c2c2; }
+.folder-tree li ul li { display: block; margin-bottom: 8px; }
+.folder-tree .arrow { position: absolute; top: 5.5px; left: -20px; width: 8px; height: 8px; transition: all .4s ease; transform: rotate(-90deg); }
+.folder-tree .arrow i { color: #595959; transition: all .4s ease; }
+.folder-tree .arrow:hover i { color: #292929; }
+.folder-tree li.expanded > ul { display: block; }
+.folder-tree li.expanded > .arrow { transform: rotate(0deg); }
+
+.card1 {
+body {
+ font-family: Arial, sans-serif;
+ border: solid #000000
+}
+
+table {
+ border-collapse: collapse;
+ width: 100%;
+}
+
+th, td {
+ border: 1px solid #ddd;
+ padding: 8px;
+ text-align: left;
+}
+
+tr:nth-child(even) {
+ background-color: #f2f2f2;
+}
+
+tr:hover {
+ background-color: #ddd;
+}
+
+th {
+ background-color: #4CAF50;
+ color: white;
+}
+
+.highlight {
+ background-color: #FF5733;
+ color: white;
+}}
