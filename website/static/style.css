@@ -1,8 +1,134 @@
+@media screen and (max-width: 1366px){
+	.container1{
+     display: block;
+     width: 30%;
+     margin-left: 5em;
+     position: absolute;
+     }
+    .buttons{
+    display: flex;
+     width: 20%;
+     position: relative;
+     }
+     .container2{
+     display: block;
+     width: 100%;
+     margin-left: 0em;
+     position: relative;
+     font-size: 12px;
+     }
+     .container3{
+     display: block;
+     width: 30%;
+     float: right;
+     position: absolute;
+     font-size: 12px;
+     transform: translateX(150%)
+	}
+	.table-container{
+		width: 100%;
+		font-size: 8px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.table-info{
+		font-size: 8px;
+	}
+	.card-header{
+		font-size: 12px;
+	}
+    .arrow-down {
+     	border: solid white;
+     	border-width: 0 1px 1px 0;
+     	display: inline-block;
+     	padding: 1px;
+     	margin-right:5px;
+     	margin-left:5px;
+     	transform: rotate(45deg);
+     	-webkit-transform: rotate(45deg)
+     }
+    .navbar {
+    	font-size: 12px;
+    	width: 100%;
+    }
+    .search {
+    	font-size: 12px;
+    }
+    * { margin: 0; padding: 0; outline: none; box-sizing: border-box; vertical-align: top;}
+.folder-tree-wrapper { background-color: #fff; min-height: 260px; width: 100%; padding: 20px; border-radius: 2%; box-shadow: 1px 1px 1px 0 rgba(0,0,0,.11); }
+.folder-tree { list-style: none; cursor: pointer; padding-left: 20px; }
+.folder-tree li { margin-bottom: 10px; font-size: 10px; transition: all .4s ease; position: relative; }
+.folder-tree li:hover {  }
+.folder-tree li i { color: rgb(242, 176, 53); }
+.folder-tree li ul { padding-left: 10px; padding-top: 8px; }
+.folder-tree ul { display: none; position: relative; }
+.folder-tree ul:before { position: absolute; content: ''; left: -10px; top: 0; width: 2px; height: 100%; background-color: transparent; border-left: dashed 1px #c2c2c2; border-bottom: dashed 1px #c2c2c2; }
+.folder-tree li ul li { display: block; margin-bottom: 8px; }
+.folder-tree .arrow { position: absolute; top: 5.5px; left: -20px; width: 8px; height: 8px; transition: all .4s ease; transform: rotate(-90deg); }
+.folder-tree .arrow i { color: #595959; transition: all .4s ease; }
+.folder-tree .arrow:hover i { color: #292929; }
+.folder-tree li.expanded > ul { display: block; }
+.folder-tree li.expanded > .arrow { transform: rotate(0deg);}
+}
 
 
-
-* { margin: 0; padding: 0; outline: none; box-sizing: border-box; vertical-align: top;}
-.folder-tree-wrapper { background-color: #fff; width: 300px; min-height: 260px; padding: 20px; margin: 35px auto; border-radius: 2%; box-shadow: 1px 1px 1px 0 rgba(0,0,0,.11); }
+@media screen and (min-width: 1370px){
+	.container1{
+     display: block;
+     width: 30%;
+     margin-left: -10em;
+     position: absolute;
+     float: left;
+     }
+     .buttons{
+     	display: flex;
+     	width: 20%;
+     	position: relative;
+     }
+     .container2{
+     display: block;
+     width: 100%%;
+     margin-left: 0em;
+     position: relative;
+     font-size: 12px;
+     }
+     .container3{
+     display: block;
+     width: 30%;
+     float: right;
+     position: absolute;
+     font-size: 12px;
+     transform: translateX(100%)
+	}
+     .buttons1{
+     	display: flex;
+     	width: 70%;
+     	position: relative;
+     }
+     .table-container{
+     	width:130%;
+     	margin-left: -220px;
+     	font-size: 12px;
+     	table-layout: fixed;
+     }
+     .card-header1{
+     	margin-left: -220px;
+     }
+     .arrow-down {
+     	border: solid white;
+     	border-width: 0 3px 3px 0;
+     	display: inline-block;
+     	padding: 3px;
+     	margin-right:5px;
+     	margin-left:5px;
+     	transform: rotate(45deg);
+     	-webkit-transform: rotate(45deg);
+     }
+    .navbar {
+    	font-size: ;
+    }
+    * { margin: 0; padding: 0; outline: none; box-sizing: border-box; vertical-align: top;}
+.folder-tree-wrapper { background-color: #fff; min-height: 260px; width: 100%; padding: 20px; border-radius: 2%; box-shadow: 1px 1px 1px 0 rgba(0,0,0,.11); }
 .folder-tree { list-style: none; cursor: pointer; padding-left: 20px; }
 .folder-tree li { margin-bottom: 10px; font-size: 16px; transition: all .4s ease; position: relative; }
 .folder-tree li:hover {  }
@@ -16,6 +142,9 @@
 .folder-tree .arrow:hover i { color: #292929; }
 .folder-tree li.expanded > ul { display: block; }
 .folder-tree li.expanded > .arrow { transform: rotate(0deg); }
+}
+
+
 
 .card1 {
 body {

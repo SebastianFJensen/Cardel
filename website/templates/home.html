@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+{% load static %}
+<link rel="stylesheet" type='text/css' href="{% static 'style.css' %}">
 {% block content %}
 <!DOCTYPE html>
 <html>
@@ -16,34 +18,35 @@
 {% if user.is_authenticated %}
 
 <br/> 
-<div class="card-header"style="margin-left: -200px;"><h1>Portfølje<h1></div>
+<div class="card-header1"><h1>Portfølje<h1></div>
 
 <br/>
 <body>
-<table style="width: 100rem";>
-<table id = "table" table class="table table-striped table-hover table-bordered" style="width: 120em;margin-left: -220px";>
-  <thead class="table" style="background-color: #102B25;">
+  <div class="table-container">
+    <table id = "table" table class="table table-striped table-hover table-bordered">
+      <thead class="table" style="background-color: #102B25;">
         <thead>
           <tr class="table-info">
-            <th>BFE Nummer</th>
-            <th>Adresse</th>
-            <th>Kommune</th>
-            <th>Region</th>
-            <th>Kontaktperson</th>
-            <th>Mail</th>
-            <th>Telefonnummer</th>
-            <th>m2</th>
-            <th>Kommuneplan</th>
-            <th>Lokalplan</th>
-            <th>Formål</th>
-            <th>Lead</th>
-            <th>Sendt til DLA</th>
-            <th>id</th>
+            <th scope="col">BFE Nummer</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Kommune</th>
+            <th scope="col">Region</th>
+            <th scope="col">Kontaktperson</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Telefonnummer</th>
+            <th scope="col">m2</th>
+            <th scope="col">Kommuneplan</th>
+            <th scope="col">Lokalplan</th>
+            <th scope="col">Formål</th>
+            <th scope="col">Lead</th>
+            <th scope="col">Sendt til DLA</th>
+            <th scope="col">id</th>
           </tr>
         </thead>
+        <div class="tbody">
         <tbody>
-      {% if records %}
-  {% for record in records %}
+          {% if records %}
+          {% for record in records %}
           <tr>
             <td>{{ record.BFE_Nummer }}</td>
             <td>{{ record.Adresse }}</td>
@@ -59,16 +62,14 @@
             <td>{{ record.Lead }}</td>
             <td>{{ record.Sendt_til_DLA }}</td>
             <td><a href="{% url 'Record' record.id %}">{{ record.id }}</td>
-          </tr>
-          {% endfor %}
-          {% endif%}
-        </tbody>
+            </tr>
+            {% endfor %}
+            {% endif%}
+          </tbody>
+        </table>
       </table>
-      </table>
-
-</tbody>
-	</table>
-	</table>
+      </div>
+    </div>
     <script>     
         
         $(function () {
@@ -95,13 +96,14 @@
   }
   .arrow-down {
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 1.5px 1.5px 0;
     display: inline-block;
     padding: 3px;
     margin-right:5px;
     margin-left:5px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    vertical-align: middle;
 }
 </style>
 </body>
