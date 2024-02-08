@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-q-(9oo_-0@k!m=+j(^$f%-^@!kgcvf)&v2l)-ygrb1eb)q1u0%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'cardel-sagsstyring.onrender.com']
 
 
 # Application definition
