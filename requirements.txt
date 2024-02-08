@@ -50,6 +50,7 @@ docutils==0.20.1
 easy-thumbnails==2.8.5
 et-xmlfile==1.1.0
 Flask==3.0.0
+gunicorn==21.2.0
 html5lib==1.1
 idna==3.6
 import-export==0.3.1
@@ -73,6 +74,7 @@ pandas==2.1.4
 Pillow==10.1.0
 plotly==5.18.0
 protobuf==4.21.12
+psycopg2==2.9.9
 python-dateutil==2.8.2
 pytz==2023.3.post1
 PyYAML==6.0.1
