@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'Cardel',
     'USER': 'root',
     'PASSWORD': 'Cardelejendomme23!?!', 
-    'HOST': 'localhost', '192.168.0.104'
+    'HOST': 'localhost', 'cardel-sagsstyring.onrender.com'
     'PORT': '3306'
     }
 }
