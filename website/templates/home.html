@@ -39,14 +39,14 @@
             <th scope="col">Lokalplan</th>
             <th scope="col">Formål</th>
             <th scope="col">Lead</th>
-            <th scope="col">Sendt til DLA</th>
+            <th scope="col">Status</th>
             <th scope="col">id</th>
           </tr>
         </thead>
         <div class="tbody">
         <tbody>
-          {% if records %}
           {% for record in records %}
+          {% if record.Status == 'Lukket aftale' %}
           <tr>
             <td>{{ record.BFE_Nummer }}</td>
             <td>{{ record.Adresse }}</td>
@@ -58,13 +58,13 @@
             <td>{{ record.m2 }}</td>
             <td>{{ record.Kommuneplan }}</td>
             <td>{{ record.Lokalplan }}</td>
-            <td>{{ record.Formål }}</td>
+            <td>{{ record.Formaal }}</td>
             <td>{{ record.Lead }}</td>
-            <td>{{ record.Sendt_til_DLA }}</td>
+            <td>{{ record.Status }}</td>
             <td><a href="{% url 'Record' record.id %}">{{ record.id }}</td>
             </tr>
+            {% endif %}
             {% endfor %}
-            {% endif%}
           </tbody>
         </table>
       </table>
@@ -106,12 +106,12 @@
     vertical-align: middle;
 }
 </style>
+
 </body>
 </html>
 
-<button type="button" class="btn btn-primary" style="margin-left:-100px" onclick="location.href='{% url 'importrecorddata' %}'">Importer data</button>
-
 {% else %}
+</div>
 
 <br/> 
 <h1>Login</h1>
@@ -128,6 +128,7 @@
   </div>
   <button type="submit" class="btn btn-secondary">Log ind</button>
 </form>
+
 
 {% endif%}
 

@@ -1,0 +1,1 @@
+Inputvaribel er bfe-nummer samt størrelse (areal). 

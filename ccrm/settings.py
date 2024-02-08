@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'openpyxl',
     'django_filters',
     'widget_tweaks',
+    'django_bootstrap_icons',
 ]
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True
@@ -126,7 +127,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "website/static")]
+MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'media')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'website/static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type

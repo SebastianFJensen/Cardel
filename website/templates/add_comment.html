@@ -1,22 +1,35 @@
 {% extends 'base.html' %}
-{% block title %} Tilføj en note til sag
 
-{% endblock %}
+{% load static %}
+
 {% block content %}
+  <br>
+  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Tilføj kommentar
+  </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Skriv kommentar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Tilføj kommentar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
 
-<br/>
-<h1>Tilføj note</h1>
-<br/>
-
-	<div class ="form-group">
-<form method="POST">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button class="btn btn-secondary">Tilføj note</button>
-<br/>
-	</div>
-
-
-
-
+{% block scripts %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <script src="{% static 'js/bootstrap.js' %}"></script>
 {% endblock %}

@@ -6,14 +6,10 @@ from .models import Record, Comment, Folder, File
 class RecordAdmin(ImportExportModelAdmin):
 	pass
 
-class AdminFolder(admin.ModelAdmin):
-    list_display = ('foldername','folderuser')
 
-class AdminFile(admin.ModelAdmin):
-    list_display = ('filename','file')
 
 admin.site.register(Record,RecordAdmin)
 admin.site.register(Comment)
-admin.site.register(Folder,AdminFolder)
-admin.site.register(File,AdminFile)
+admin.site.register(Folder)
+admin.site.register(File)
 path('', include('ccrm.urls'))
